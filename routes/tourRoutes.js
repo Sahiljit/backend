@@ -1,12 +1,17 @@
 import express from 'express'
-import {createTour, getTours} from '../controllers/tourController.js'
+import {createTour, getAllTours, getTour} from '../controllers/tourController.js'
 
 const router = express.Router()
 
 router
     .route('/')
-    .get(getTours)
+    .get(getAllTours)
     .post(createTour)
+
+
+router
+    .route('/:id')
+    .get(getTour)
 
 
 

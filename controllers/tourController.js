@@ -1,6 +1,8 @@
 import {Tour} from '../models/tourModel.js'
 
 export const getAllTours = async(req, res) => {
+
+    console.log(req.query)
     
     try{
     const tours = await Tour.find()
@@ -96,7 +98,7 @@ export const updateTour = async(req,res) => {
 export const deleteTour = async(req, res) => {
     try{
 
-         await Tour.findByIdAndDelete(req.params.id)
+        await Tour.findByIdAndDelete(req.params.id)
 
         res.status(204).json({
             status: 'success',

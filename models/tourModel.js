@@ -13,6 +13,10 @@ const tourSchema = new mongoose.Schema({
     price:{
         type : Number,
         required: [true, 'A tour must have a price']
+    },
+    address: {
+        city: {type: String},
+        postalcode: Number
     }
 })
 
